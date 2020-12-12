@@ -128,7 +128,7 @@ lr = 0.01                 # learning rate
 epsilon = 0.1            # epsilon-greedy
 gamma = 0.9               # reward discount factor
 target_replace_iter = 100 # target network 更新間隔
-memory_capacity = 2000
+memory_capacity = 1000
 
 n_episodes = 400
 
@@ -143,7 +143,7 @@ for i_episode in range(n_episodes):
     
     state = env.reset()
     # print('base:',state)
-    # print(i_episode)
+    print(i_episode)
     while True:
         env.render()
 
@@ -175,7 +175,7 @@ for i_episode in range(n_episodes):
 
         if done:
             print('Episode finished after {} timesteps, total rewards {}'.format(t+1, rewards))
-            all_rewards.append(rewards)
+            all_rewards.append(t+1)
             break
         t += 1
 
